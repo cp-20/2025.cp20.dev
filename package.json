@@ -1,5 +1,5 @@
 {
-  "name": "example-with-unocss",
+  "name": "2025.cp20.dev",
   "type": "module",
   "scripts": {
     "dev": "vinxi dev",
@@ -16,8 +16,5 @@
   },
   "overrides": {
     "vite": "6.0.6"
-  },
-  "engines": {
-    "node": ">=18"
   }
 }
