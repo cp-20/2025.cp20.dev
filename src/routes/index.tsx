@@ -1,7 +1,9 @@
-import { A } from '@solidjs/router';
+import { ProfileCard } from '~/components/models/home/ProfileCard';
 
 export default function Home() {
   return (
-    <main class="text-center mx-auto text-gray-700 p-4">Hello cp20.dev</main>
+    <main class="max-w-4xl mx-auto p-4">
+      <ProfileCard />
+    </main>
   );
 }
