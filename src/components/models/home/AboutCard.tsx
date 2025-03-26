@@ -1,13 +1,11 @@
 import { Icon } from '@iconify-icon/solid';
 import { Component } from 'solid-js';
-import { Card } from '~/components/Card';
+import { Card, CardTitle } from '~/components/Card';
 import { Link } from '~/components/Link';
 
 export const AboutCard: Component = () => (
   <Card>
-    <h2 class="text-3xl font-bold mb-8">
-      <div class="border-b border-b-dotted border-b-6 pb-2 w-fit">About Me</div>
-    </h2>
+    <CardTitle>About Me</CardTitle>
     <div class="space-y-8">
       <div>
         <h3 class="flex items-center gap-2 font-bold text-lg mb-2">
@@ -22,12 +20,15 @@ export const AboutCard: Component = () => (
         <ul class="pl-2">
           <li class="list-disc-inside font-medium space-x-1">
             <span>東京科学大学 学士3年</span>
-            <span class="text-xs text-gray-4">
+            <span class="text-xs text-gray-4 text-nowrap">
               (理工学系 情報理工学院 情報工学系)
             </span>
           </li>
           <li class="list-disc-inside font-medium">
             <Link href="https://trap.jp">デジタル創作同好会traP</Link>
+          </li>
+          <li class="list-disc-inside font-medium">
+            <Link href="https://flatt.tech/">GMO Flatt Security株式会社</Link>
           </li>
           <li class="list-disc-inside font-medium">
             <Link href="https://www.cyberagent.co.jp/careers/special/students/tech_lounge/">

@@ -6,11 +6,13 @@ import { Mixi2Icon } from '~/components/icons/mixi2';
 import { SocialCard } from '~/components/SocialCard';
 
 export const ProfileCard: Component = () => (
-  <Card class="grid grid-cols-2 p-8">
+  <Card class="grid p-8 grid-cols-1 md:grid-cols-2 gap-8">
     <div class="space-y-4">
       <div class="space-y-2">
-        <div class="text-4xl font-bold">しーぴー</div>
-        <div class="text-gray-4 font-semibold">ゆるふわプログラマー志望</div>
+        <div class="text-4xl font-bold max-md:text-center">しーぴー</div>
+        <div class="text-gray-4 font-semibold max-md:text-center">
+          ゆるふわプログラマー志望
+        </div>
       </div>
       <div class="space-y-2">
         <SocialCard
@@ -43,8 +45,17 @@ export const ProfileCard: Component = () => (
         />
       </div>
     </div>
-    <div class="grid place-content-center">
-      <img src={avatar} alt="" class="rounded-full" />
+    <div class="flex flex-col gap-2 justify-center items-center">
+      <img src={avatar} alt="" class="rounded-full" width={256} height={256} />
+      <div class="text-xs">
+        icon by{' '}
+        <a
+          class="text-blue-500 underline"
+          href="https://twitter.com/sora_douhu"
+        >
+          @sora_douhu
+        </a>
+      </div>
     </div>
   </Card>
 );
