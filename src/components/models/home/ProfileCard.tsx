@@ -18,7 +18,7 @@ export const ProfileCard: Component = () => (
           href="https://twitter.com/__cp20__"
           mediaLabel="Twitter"
           idLabel="__cp20__"
-          icon={<div class="i-mdi-twitter text-[#1da1f2] size-6" />}
+          icon={<div class="i-mdi-twitter text-[#1da1f2] size-8" />}
           class="bg-[#1da1f2]/20 hover:bg-[#1da1f2]/30 text-gray-2"
         />
         <SocialCard
@@ -32,7 +32,7 @@ export const ProfileCard: Component = () => (
           href="https://github.com/cp-20"
           mediaLabel="GitHub"
           idLabel="cp-20"
-          icon={<div class="i-mdi-github text-white size-6" />}
+          icon={<div class="i-mdi-github text-white size-8" />}
           class="bg-black/30 hover:bg-black/50 text-gray-2 transition-colors duration-100"
         />
       </div>
