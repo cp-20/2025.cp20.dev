@@ -13,12 +13,14 @@
     "clsx": "^2.1.1",
     "solid-js": "^1.9.3",
     "unocss": "^0.65.3",
+    "valibot": "^1.0.0",
     "vinxi": "^0.5.1"
   },
   "overrides": {
     "vite": "6.0.6"
   },
   "devDependencies": {
-    "@iconify-icon/solid": "^2.3.0"
+    "@iconify-json/mdi": "^1.2.3",
+    "wrangler": "^4.4.1"
   }
 }

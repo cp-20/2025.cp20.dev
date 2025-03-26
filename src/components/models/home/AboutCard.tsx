@@ -1,4 +1,3 @@
-import { Icon } from '@iconify-icon/solid';
 import { Component } from 'solid-js';
 import { Card, CardTitle } from '~/components/Card';
 import { Link } from '~/components/Link';
@@ -9,12 +8,7 @@ export const AboutCard: Component = () => (
     <div class="space-y-8">
       <div>
         <h3 class="flex items-center gap-2 font-bold text-lg mb-2">
-          <Icon
-            icon="mdi:account-group"
-            width={24}
-            height={24}
-            class="text-teal"
-          />
+          <div class="i-mdi-account-group text-teal size-6" />
           <span>所属</span>
         </h3>
         <ul class="pl-2">
@@ -39,12 +33,7 @@ export const AboutCard: Component = () => (
       </div>
       <div>
         <h3 class="flex items-center gap-2 font-bold text-lg mb-2">
-          <Icon
-            icon="mdi:lightbulb-alert"
-            width={24}
-            height={24}
-            class="text-indigo"
-          />
+          <div class="i-mdi-lightbulb-alert text-indigo size-6" />
           <span>興味</span>
         </h3>
         <div class="space-y-2">
@@ -61,7 +50,7 @@ export const AboutCard: Component = () => (
       </div>
       <div>
         <h3 class="flex items-center gap-2 font-bold text-lg mb-2">
-          <Icon icon="mdi:code" width={24} height={24} class="text-pink" />
+          <div class="i-mdi-code text-pink size-6" />
           <span>技術スタック</span>
         </h3>
         <div class="space-y-2">
