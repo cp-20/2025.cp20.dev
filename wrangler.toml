@@ -1,7 +1,6 @@
 # Cloudflare Pages configuration
 name = "2025-portfolio"
 compatibility_date = "2025-03-26"
-pages_build_output_dir = ".output/public"
 
 [build]
 command = "bun run build"
