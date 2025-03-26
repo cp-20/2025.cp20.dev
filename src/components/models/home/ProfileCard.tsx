@@ -32,7 +32,7 @@ export const ProfileCard: Component = () => (
           href="https://github.com/cp-20"
           mediaLabel="GitHub"
           idLabel="cp-20"
-          icon={<div class="i-mdi-github text-[#181717] size-6" />}
+          icon={<div class="i-mdi-github text-white size-6" />}
           class="bg-black/30 hover:bg-black/50 text-gray-2 transition-colors duration-100"
         />
       </div>
