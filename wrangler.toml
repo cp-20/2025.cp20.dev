@@ -2,4 +2,4 @@
 name = "2025-portfolio"
 compatibility_date = "2025-03-26"
 compatibility_flags = ["nodejs_compat"]
-pages_build_output_dir = ".output"
+pages_build_output_dir = "dist"
