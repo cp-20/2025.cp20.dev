@@ -18,5 +18,7 @@ export const MainLayout: Component<{
     startTransition(() => e.retry(true));
   });
 
-  return <main class="max-w-4xl mx-auto p-4 space-y-8">{props.children}</main>;
+  return (
+    <main class="max-w-4xl mx-auto p-4 pb-40 space-y-8">{props.children}</main>
+  );
 };
