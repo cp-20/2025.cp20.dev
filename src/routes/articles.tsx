@@ -27,7 +27,7 @@ export default function Articles() {
   return (
     <MainLayout>
       <CardLink href="/" class="inline-flex items-center gap-1 font-medium">
-        <div class="i-mdi-chevron-left size-6" />
+        <div class="i-mdi-chevron-left size-6 shrink-0" />
         ホームに戻る
       </CardLink>
       <h1 class="text-white text-4xl font-bold text-center mt-8">

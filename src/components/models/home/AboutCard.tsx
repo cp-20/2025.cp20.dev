@@ -8,7 +8,7 @@ export const AboutCard: Component = () => (
     <div class="space-y-8">
       <div>
         <h3 class="flex items-center gap-2 font-bold text-lg mb-2">
-          <div class="i-mdi-account-group text-teal size-6" />
+          <div class="i-mdi-account-group text-teal size-6 shrink-0" />
           <span>所属</span>
         </h3>
         <ul class="pl-2">
@@ -33,7 +33,7 @@ export const AboutCard: Component = () => (
       </div>
       <div>
         <h3 class="flex items-center gap-2 font-bold text-lg mb-2">
-          <div class="i-mdi-lightbulb-alert text-indigo size-6" />
+          <div class="i-mdi-lightbulb-alert text-indigo size-6 shrink-0" />
           <span>興味</span>
         </h3>
         <div class="space-y-2">
@@ -50,7 +50,7 @@ export const AboutCard: Component = () => (
       </div>
       <div>
         <h3 class="flex items-center gap-2 font-bold text-lg mb-2">
-          <div class="i-mdi-code text-pink size-6" />
+          <div class="i-mdi-code text-pink size-6 shrink-0" />
           <span>技術スタック</span>
         </h3>
         <div class="space-y-2">
