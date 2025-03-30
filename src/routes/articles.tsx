@@ -1,8 +1,9 @@
-import { createResource, For } from 'solid-js';
-import { CardLink } from '~/components/Card';
-import { type Article, getArticlesAPI } from '~/features/articles';
-import { MainLayout } from '~/layouts/main';
-import { formatDate } from '~/utils/date';
+import { For } from "solid-js";
+import { CardLink } from "~/components/Card";
+import type { Article } from "~/features/articles";
+import { useArticles } from "~/features/articles/useArticles";
+import { MainLayout } from "~/layouts/main";
+import { formatDate } from "~/utils/date";
 
 const groupArticlesByYear = (articles: Article[]) => {
   const grouped = new Map<number, Article[]>();
@@ -18,7 +19,7 @@ const groupArticlesByYear = (articles: Article[]) => {
 };
 
 export default function Articles() {
-  const [articles] = createResource(getArticlesAPI);
+  const articles = useArticles();
   const grouped = () => {
     const data = articles();
     return data ? groupArticlesByYear(data) : [];
@@ -59,7 +60,7 @@ export default function Articles() {
                           <span>
                             {formatDate(
                               new Date(article.postedAt),
-                              'YYYY-MM-DD'
+                              "YYYY-MM-DD",
                             )}
                           </span>
                           <span>/</span>

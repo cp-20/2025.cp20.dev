@@ -1,11 +1,10 @@
-import { type Component, createResource, For, Show } from 'solid-js';
-import { ArticleSubCard } from '~/components/ArticleSubCard';
-import { Card, CardTitle } from '~/components/Card';
-import { getArticlesAPI } from '~/features/articles';
-import { formatDate } from '~/utils/date';
+import { type Component, For, Show } from "solid-js";
+import { ArticleSubCard } from "~/components/ArticleSubCard";
+import { Card, CardTitle } from "~/components/Card";
+import { useArticles } from "~/features/articles/useArticles";
 
 export const RecentArticlesCard: Component = () => {
-  const [articles] = createResource(getArticlesAPI);
+  const articles = useArticles();
   return (
     <Card>
       <CardTitle>Recent Articles</CardTitle>

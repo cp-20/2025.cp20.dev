@@ -11,6 +11,7 @@ export const MainLayout: Component<{
       return update();
     }
     document.startViewTransition(update);
+    console.log("startViewTransition");
   };
 
   useBeforeLeave((e) => {

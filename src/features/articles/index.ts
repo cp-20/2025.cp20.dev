@@ -22,8 +22,8 @@ export const getArticlesAPI = async () => {
   }
 
   const getEnv = (key: string): string => {
-    const env = process.env[key] ??
-      event.nativeEvent.context.cloudflare.env[key];
+    const env =
+      process.env[key] ?? event.nativeEvent.context.cloudflare.env[key];
     if (!env) {
       throw new Error(`Environment variable ${key} is not set`);
     }
@@ -32,7 +32,9 @@ export const getArticlesAPI = async () => {
   const ghostApiKey = getEnv("GHOST_ADMIN_API_KEY");
   const qiitaAccessToken = getEnv("QIITA_ACCESS_TOKEN");
 
-  return getArticles({ qiitaAccessToken, ghostApiKey });
+  const articles = await getArticles({ qiitaAccessToken, ghostApiKey });
+
+  return articles;
 };
 
 type Params = {

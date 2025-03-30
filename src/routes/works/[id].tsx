@@ -1,14 +1,14 @@
 import avatarImage from "~/assets/avatar.png";
 import { useParams } from "@solidjs/router";
-import { createResource, For, Show } from "solid-js";
+import { For, Show } from "solid-js";
 import { Card, CardLink } from "~/components/Card";
 import { MainLayout } from "~/layouts/main";
 import { HttpStatusCode } from "@solidjs/start";
 import { works } from "~/personal-data/works";
 import { Link } from "~/components/Link";
-import { getArticlesAPI } from "~/features/articles";
 import { ArticleSubCard } from "~/components/ArticleSubCard";
 import { WorkCard } from "~/components/models/works/WorkCard";
+import { useArticles } from "~/features/articles/useArticles";
 
 const getRepoNameFromUrl = (url: string) => {
   const match = url.match(/github\.com\/([^/]+\/[^/]+)/);
@@ -27,7 +27,7 @@ export default function Work() {
     workIndex() > 0 ? works[workIndex() - 1] : works[works.length - 1];
   const nextWork = () =>
     workIndex() < works.length - 1 ? works[workIndex() + 1] : works[0];
-  const [articles] = createResource(getArticlesAPI);
+  const articles = useArticles();
 
   return (
     <>
