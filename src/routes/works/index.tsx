@@ -15,7 +15,16 @@ export default function Works() {
         創ったものたち
       </h1>
       <div class="grid grid-cols-2 gap-4">
-        <For each={works}>{(work) => <WorkCard work={work} transition />}</For>
+        <For each={works}>
+          {(work, index) => (
+            <WorkCard
+              work={work}
+              transition
+              class="animate-pop-in-up animate-duration-300 invisible animate-fill-forwards"
+              style={{ "animation-delay": `${index() * 100}ms` }}
+            />
+          )}
+        </For>
       </div>
     </MainLayout>
   );
