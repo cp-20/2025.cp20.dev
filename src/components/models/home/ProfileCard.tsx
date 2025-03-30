@@ -1,4 +1,4 @@
-import { Component } from 'solid-js';
+import type { Component } from 'solid-js';
 import avatar from '~/assets/avatar.png';
 import { Card } from '~/components/Card';
 import { Mixi2Icon } from '~/components/icons/mixi2';

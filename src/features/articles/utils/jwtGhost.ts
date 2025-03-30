@@ -40,7 +40,7 @@ export const sign = async (key: string): Promise<string> => {
   const partialToken = `${encodedHeader}.${encodedPayload}`;
 
   const secretArray = Uint8Array.from(
-    secret.match(/.{2}/g)!.map((s) => parseInt(s, 16)),
+    secret.match(/.{2}/g)!.map((s) => Number.parseInt(s, 16)),
   );
   const cryptoKey = await crypto.subtle.importKey(
     "raw",

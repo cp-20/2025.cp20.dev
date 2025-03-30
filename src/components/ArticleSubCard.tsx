@@ -1,5 +1,5 @@
-import { Component } from 'solid-js';
-import { Article } from '~/features/articles';
+import type { Component } from 'solid-js';
+import type { Article } from '~/features/articles';
 import { formatDate } from '~/utils/date';
 
 type Props = {

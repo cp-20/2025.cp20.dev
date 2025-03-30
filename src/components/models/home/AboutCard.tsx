@@ -1,4 +1,4 @@
-import { Component } from 'solid-js';
+import type { Component } from 'solid-js';
 import { Card, CardTitle } from '~/components/Card';
 import { Link } from '~/components/Link';
 

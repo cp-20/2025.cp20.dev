@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { Component, ComponentProps, JSX } from 'solid-js';
+import type { Component, ComponentProps, JSX } from 'solid-js';
 
 type SocialCardProps = {
   mediaLabel: string;

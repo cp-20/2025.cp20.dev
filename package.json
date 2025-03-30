@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
-    "start": "vinxi start"
+    "start": "vinxi start",
+    "lint:fix": "biome lint --fix"
   },
   "dependencies": {
     "@solidjs/router": "^0.15.2",
@@ -20,6 +21,7 @@
     "vite": "6.0.6"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@iconify-json/mdi": "^1.2.3",
     "unenv": "^1.10.0",
     "wrangler": "^4.4.1"

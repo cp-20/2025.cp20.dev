@@ -1,6 +1,6 @@
 import { createResource, For } from 'solid-js';
 import { CardLink } from '~/components/Card';
-import { Article, getArticlesAPI } from '~/features/articles';
+import { type Article, getArticlesAPI } from '~/features/articles';
 import { MainLayout } from '~/layouts/main';
 import { formatDate } from '~/utils/date';
 

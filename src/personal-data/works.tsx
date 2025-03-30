@@ -1,5 +1,5 @@
 import { Link } from '~/components/Link';
-import { Component } from 'solid-js';
+import type { Component } from 'solid-js';
 
 export type Tag = '個人開発' | 'チーム開発' | 'traP' | 'SecHack365';
 export type TechStackType =

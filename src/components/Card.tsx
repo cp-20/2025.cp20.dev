@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { Component, ComponentProps } from 'solid-js';
+import type { Component, ComponentProps } from 'solid-js';
 
 export const Card: Component<ComponentProps<'div'>> = (props) => (
   <div

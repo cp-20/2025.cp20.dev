@@ -15,7 +15,7 @@ export const ogImageFetcher = async (url: string) => {
   const ogImageUrl = text.match(
     /<meta property="og:image" content="(.+?)">/,
   )?.[1];
-  return ogImageUrl && ogImageUrl.replaceAll("&amp;", "&");
+  return ogImageUrl?.replaceAll("&amp;", "&");
 };
 
 const qiitaApiEndpoint =

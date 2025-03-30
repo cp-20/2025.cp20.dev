@@ -1,4 +1,4 @@
-import { Component, createResource, For, Show } from 'solid-js';
+import { type Component, createResource, For, Show } from 'solid-js';
 import { ArticleSubCard } from '~/components/ArticleSubCard';
 import { Card, CardTitle } from '~/components/Card';
 import { getArticlesAPI } from '~/features/articles';

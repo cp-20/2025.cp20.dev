@@ -1,11 +1,11 @@
-import { useBeforeLeave, useNavigate } from '@solidjs/router';
-import { Component, createEffect, JSX, onCleanup } from 'solid-js';
+import { useBeforeLeave } from "@solidjs/router";
+import type { Component, JSX } from "solid-js";
 
 export const MainLayout: Component<{
   children?: JSX.Element;
 }> = (props) => {
   // FIXME: 戻る/進むボタンを押したときに View Transition の挙動が不安定
-  const startTransition = function (update: () => void) {
+  const startTransition = (update: () => void) => {
     // View Transition API をサポートしていない場合
     if (!document.startViewTransition) {
       return update();
