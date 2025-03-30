@@ -8,6 +8,7 @@ import { works } from "~/personal-data/works";
 import { Link } from "~/components/Link";
 import { getArticlesAPI } from "~/features/articles";
 import { ArticleSubCard } from "~/components/ArticleSubCard";
+import { WorkCard } from "~/components/models/works/WorkCard";
 
 const getRepoNameFromUrl = (url: string) => {
   const match = url.match(/github\.com\/([^/]+\/[^/]+)/);
@@ -19,14 +20,19 @@ const getRepoNameFromUrl = (url: string) => {
 
 export default function Work() {
   const params = useParams();
-  const workId = params.id;
-  const work = works.find((work) => work.id === workId);
+  const workId = () => params.id;
+  const workIndex = () => works.findIndex((work) => work.id === workId());
+  const work = () => works[workIndex()];
+  const prevWork = () =>
+    workIndex() > 0 ? works[workIndex() - 1] : works[works.length - 1];
+  const nextWork = () =>
+    workIndex() < works.length - 1 ? works[workIndex() + 1] : works[0];
   const [articles] = createResource(getArticlesAPI);
 
   return (
     <>
       <MainLayout>
-        <Show when={!work}>
+        <Show when={!work()}>
           <HttpStatusCode code={404} />
           <div class="text-center flex flex-col gap-4 justify-center items-center">
             <div class="i-mdi-search text-9xl text-white shrink-0" />
@@ -37,7 +43,7 @@ export default function Work() {
             <CardLink href="/works">作品一覧に戻る</CardLink>
           </div>
         </Show>
-        <Show when={work}>
+        <Show when={work()}>
           <CardLink
             href="/works"
             class="inline-flex items-center gap-1 font-medium"
@@ -47,16 +53,16 @@ export default function Work() {
           </CardLink>
           <div class="space-y-4">
             <h1 class="text-white text-4xl font-bold text-center">
-              {work!.title}
+              {work()!.title}
             </h1>
-            <div class="text-gray-400 text-center">{work!.description}</div>
+            <div class="text-gray-400 text-center">{work()!.description}</div>
           </div>
           <div class="flex justify-center">
             <img
-              src={`/works/og/${workId}.png`}
+              src={`/works/og/${workId()}.png`}
               alt=""
               class="aspect-[1200/630] object-cover max-w-xl rounded w-full"
-              style={{ "view-transition-name": `img-${workId}` }}
+              style={{ "view-transition-name": `img-${workId()}` }}
             />
           </div>
           <Card class="md:grid md:grid-cols-2 max-md:flex max-md:flex-col gap-4">
@@ -65,7 +71,7 @@ export default function Work() {
                 class="i-mdi-link-variant text-white size-6 shrink-0"
                 title="作品リンク"
               />
-              <Link href={work!.url}>{work!.url}</Link>
+              <Link href={work()!.url}>{work()!.url}</Link>
             </div>
             <div class="flex gap-2">
               <div
@@ -73,7 +79,7 @@ export default function Work() {
                 title="作品タグ"
               />
               <div class="flex gap-2 flex-wrap">
-                <For each={work!.tags}>
+                <For each={work()!.tags}>
                   {(tag) => (
                     <span class="h-fit bg-white/10 text-white rounded-lg px-2 py-1 text-sm font-medium">
                       {tag}
@@ -88,7 +94,7 @@ export default function Work() {
                 title="開発期間"
               />
               <div class="text-gray-200 font-medium">
-                {work!.productionTime}
+                {work()!.productionTime}
               </div>
             </div>
             <div class="flex gap-2">
@@ -97,7 +103,7 @@ export default function Work() {
                 title="リポジトリ"
               />
               <div class="flex gap-2 flex-wrap">
-                <For each={work!.repositories}>
+                <For each={work()!.repositories}>
                   {(repo) => (
                     <>
                       <Show when={repo !== "private"}>
@@ -124,7 +130,7 @@ export default function Work() {
                 title="技術スタック"
               />
               <div class="flex gap-2 flex-wrap">
-                <For each={work!.techStack}>
+                <For each={work()!.techStack}>
                   {(tech) => (
                     <span class="bg-white/10 text-white rounded-lg px-2 py-1 text-sm font-medium relative">
                       {tech.label}
@@ -138,7 +144,7 @@ export default function Work() {
             </div>
           </Card>
           <Card class="space-y-4">
-            <For each={work!.comments}>
+            <For each={work()!.comments}>
               {(Comment) => (
                 <div class="flex gap-5">
                   <img
@@ -161,7 +167,7 @@ export default function Work() {
               )}
             </For>
           </Card>
-          <Show when={work!.relatedArticles.length > 0}>
+          <Show when={work()!.relatedArticles.length > 0}>
             <Card>
               <h2 class="mb-4 flex gap-2 items-center">
                 <div class="i-mdi-paper-search size-6 text-white" />
@@ -169,7 +175,7 @@ export default function Work() {
               </h2>
               <Show when={articles()}>
                 <div class="flex gap-2 flex-col">
-                  <For each={work!.relatedArticles}>
+                  <For each={work()!.relatedArticles}>
                     {(articleUrl) => {
                       const article = articles()?.find(
                         (article) => article.url === articleUrl,
@@ -185,6 +191,22 @@ export default function Work() {
               </Show>
             </Card>
           </Show>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <div class="flex gap-2 items-center text-white font-bold mb-4">
+                <div class="i-mdi-chevron-left size-6" />
+                <span>前の作品</span>
+              </div>
+              <WorkCard work={prevWork()} />
+            </div>
+            <div>
+              <div class="flex gap-2 items-center text-white font-bold mb-4 justify-end">
+                <span>次の作品</span>
+                <div class="i-mdi-chevron-right size-6" />
+              </div>
+              <WorkCard work={nextWork()} />
+            </div>
+          </div>
         </Show>
       </MainLayout>
     </>
