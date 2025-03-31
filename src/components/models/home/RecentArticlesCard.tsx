@@ -18,7 +18,7 @@ export const RecentArticlesCard: Component = () => {
             {(article, index) => (
               <ArticleSubCard
                 article={article}
-                class="animate-pop-in-up animate-duration-300 invisible animate-fill-forwards"
+                class="animate-pop-in-up animate-duration-300 child-animate animate-fill-forwards"
                 style={{ "animation-delay": `${index() * 100 + 500}ms` }}
               />
             )}
