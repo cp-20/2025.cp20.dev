@@ -1,5 +1,5 @@
 // @refresh reload
-import { createHandler, StartServer } from '@solidjs/start/server';
+import { createHandler, StartServer } from "@solidjs/start/server";
 
 export default createHandler(() => (
   <StartServer
@@ -15,6 +15,24 @@ export default createHandler(() => (
           <link
             href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
             rel="stylesheet"
+          />
+
+          <meta property="og:title" content="cp20.dev" />
+          <meta
+            property="og:description"
+            content="世の中にはね、無駄なことなんかひとつだってないのよ、きっと"
+          />
+          <meta
+            property="og:image"
+            content="https://cp20.dev/works/og/2025-portfolio.png"
+          />
+          <meta property="og:url" content="https://cp20.dev" />
+          <meta property="og:type" content="website" />
+
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            name="twitter:image"
+            content="https://cp20.dev/works/og/2025-portfolio.png"
           />
           {assets}
         </head>
