@@ -27,8 +27,7 @@ export const WorkCard: Component<Props> = (props) => {
           src={`/works/og/${props.work.id}.png`}
           alt=""
           class="aspect-[1200/630] object-cover group-hover:opacity-80 duration-200 rounded-b"
-          width={424}
-          height={222.6}
+          width={600}
           style={
             props.transition
               ? { "view-transition-name": `img-${props.work.id}` }

@@ -14,7 +14,7 @@ export default function Works() {
       <h1 class="text-white text-4xl font-bold text-center mt-8">
         創ったものたち
       </h1>
-      <div class="grid grid-cols-2 gap-4">
+      <div class="grid sm:grid-cols-2 grid-cols-1 gap-4">
         <For each={works}>
           {(work, index) => (
             <WorkCard
