@@ -1,3 +1,5 @@
+import crypto from "node:crypto";
+
 const encoder = new TextEncoder();
 
 const encodeBase64 = (buf: ArrayBufferLike): string => {
