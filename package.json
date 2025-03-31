@@ -5,7 +5,8 @@
     "dev": "vinxi dev",
     "build": "vinxi build",
     "start": "vinxi start",
-    "lint:fix": "biome lint --fix"
+    "lint:fix": "biome lint --fix",
+    "format": "biome format --write"
   },
   "dependencies": {
     "@solidjs/router": "^0.15.2",

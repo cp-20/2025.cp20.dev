@@ -10,7 +10,10 @@ const sizumeApiSchema = v.array(
             id: v.number(),
             title: v.string(),
             firstPublishedAt: v.object({
-              time: v.pipe(v.number(), v.transform((time) => new Date(time))),
+              time: v.pipe(
+                v.number(),
+                v.transform((time) => new Date(time)),
+              ),
             }),
             slug: v.string(),
           }),
@@ -24,9 +27,7 @@ const sizumeApiEndpointUrl =
   "https://sizu.me/api/trpc/postList.index?batch=1&input=%7B%220%22%3A%7B%22userId%22%3A452%2C%22pageNumber%22%3A1%7D%7D";
 
 export const fetchSizumeArticles = async (): Promise<Article[]> => {
-  const res = await fetch(
-    sizumeApiEndpointUrl,
-  );
+  const res = await fetch(sizumeApiEndpointUrl);
   const json = await res.json();
   const result = v.parse(sizumeApiSchema, json);
   const articles: Article[] = result[0].result.data.posts.map((post) => ({
