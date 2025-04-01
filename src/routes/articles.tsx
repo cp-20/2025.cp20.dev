@@ -1,4 +1,5 @@
-import { For } from "solid-js";
+import { For, Show } from "solid-js";
+import { ArticleImage } from "~/components/ArticleImage";
 import { CardLink } from "~/components/Card";
 import type { Article } from "~/features/articles";
 import { useArticles } from "~/features/articles/useArticles";
@@ -76,12 +77,13 @@ export default function Articles() {
                           <span>{article.source}</span>
                         </div>
                       </div>
-                      <img
-                        class="max-sm:rounded-b sm:rounded-r sm:h-32 aspect-[1200/630] object-cover"
-                        src={article.ogImageUrl}
-                        alt=""
-                        loading="lazy"
-                      />
+                      <Show when={article.ogImageUrl}>
+                        <ArticleImage
+                          src={article.ogImageUrl!}
+                          class="max-sm:rounded-b sm:rounded-r sm:h-32"
+                          sizes="(max-width:640px) 100vw, 256px"
+                        />
+                      </Show>
                     </a>
                   )}
                 </For>

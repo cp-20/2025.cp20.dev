@@ -1,5 +1,11 @@
 import clsx from "clsx";
-import { type ComponentProps, splitProps, type Component } from "solid-js";
+import {
+  type ComponentProps,
+  splitProps,
+  type Component,
+  Show,
+} from "solid-js";
+import { ArticleImage } from "~/components/ArticleImage";
 import type { Article } from "~/features/articles";
 import { formatDate } from "~/utils/date";
 
@@ -30,12 +36,13 @@ export const ArticleSubCard: Component<Props> = (originalProps) => {
           <span>{props.article.source}</span>
         </div>
       </div>
-      <img
-        src={props.article.ogImageUrl}
-        alt=""
-        class="aspect-[1200/630] sm:h-16 object-cover rounded-r"
-        loading="lazy"
-      />
+      <Show when={props.article.ogImageUrl}>
+        <ArticleImage
+          src={props.article.ogImageUrl!}
+          class="sm:h-16 sm:rounded-r max-sm:rounded-b"
+          sizes="(max-width:640px) 100vw, 128px"
+        />
+      </Show>
     </a>
   );
 };
