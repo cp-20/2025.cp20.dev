@@ -21,7 +21,7 @@ export const ArticleImage: Component<Props> = (props) => {
     height,
   }: { width?: number; height?: number }) => {
     const params = new URLSearchParams();
-    params.set("url", props.src);
+    params.set("image", props.src);
     if (width) params.set("width", String(width));
     if (height) params.set("height", String(height));
     params.set("quality", String(quality));
