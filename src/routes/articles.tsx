@@ -1,3 +1,4 @@
+import { Title } from "@solidjs/meta";
 import { For, Show } from "solid-js";
 import { ArticleImage } from "~/components/ArticleImage";
 import { CardLink } from "~/components/Card";
@@ -28,6 +29,7 @@ export default function Articles() {
 
   return (
     <MainLayout>
+      <Title>投稿した記事 | cp20.dev</Title>
       <CardLink href="/" class="inline-flex items-center gap-1 font-medium">
         <div class="i-mdi-chevron-left size-6 shrink-0" />
         ホームに戻る

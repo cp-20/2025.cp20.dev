@@ -1,3 +1,4 @@
+import { Title } from "@solidjs/meta";
 import { For } from "solid-js";
 import { CardLink } from "~/components/Card";
 import { WorkCard } from "~/components/models/works/WorkCard";
@@ -7,6 +8,7 @@ import { works } from "~/personal-data/works";
 export default function Works() {
   return (
     <MainLayout>
+      <Title>創ったものたち | cp20.dev</Title>
       <CardLink href="/" class="inline-flex items-center gap-1 font-medium">
         <div class="i-mdi-chevron-left size-6 shrink-0" />
         ホームに戻る

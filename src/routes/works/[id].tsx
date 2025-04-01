@@ -9,6 +9,7 @@ import { Link } from "~/components/Link";
 import { ArticleSubCard } from "~/components/ArticleSubCard";
 import { WorkCard } from "~/components/models/works/WorkCard";
 import { useArticles } from "~/features/articles/useArticles";
+import { Title } from "@solidjs/meta";
 
 const getRepoNameFromUrl = (url: string) => {
   const match = url.match(/github\.com\/([^/]+\/[^/]+)/);
@@ -32,6 +33,11 @@ export default function Work() {
   return (
     <>
       <MainLayout>
+        <Title>
+          {work()
+            ? `${work()!.title} | cp20.dev`
+            : "作品が見つかりません | cp20.dev"}
+        </Title>
         <Show when={!work()}>
           <HttpStatusCode code={404} />
           <div class="text-center flex flex-col gap-4 justify-center items-center">

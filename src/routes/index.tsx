@@ -1,3 +1,4 @@
+import { Title } from "@solidjs/meta";
 import { AboutCard } from "~/components/models/home/AboutCard";
 import { HighlightedWorksCard } from "~/components/models/home/HighlightedWorksCard";
 import { ProfileCard } from "~/components/models/home/ProfileCard";
@@ -7,6 +8,7 @@ import { MainLayout } from "~/layouts/main";
 export default function Home() {
   return (
     <MainLayout>
+      <Title>cp20.dev</Title>
       <ProfileCard />
       <AboutCard />
       <HighlightedWorksCard />
