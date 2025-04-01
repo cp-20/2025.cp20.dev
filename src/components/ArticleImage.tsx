@@ -26,7 +26,7 @@ export const ArticleImage: Component<Props> = (props) => {
     if (height) params.set("height", String(height));
     params.set("quality", String(quality));
 
-    return `/api/images?${params.toString()}`;
+    return `https://image.cp20.dev?${params.toString()}`;
   };
 
   const imageUrl = () =>
