@@ -91,6 +91,7 @@ export const ProfileCard: Component = () => (
           class="rounded-full"
           width={256}
           height={256}
+          loading="eager"
         />
         <div class="text-xs">
           icon by <Link href="https://twitter.com/sora_douhu">@sora_douhu</Link>

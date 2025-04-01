@@ -80,6 +80,7 @@ export default function Articles() {
                         class="max-sm:rounded-b sm:rounded-r sm:h-32 aspect-[1200/630] object-cover"
                         src={article.ogImageUrl}
                         alt=""
+                        loading="lazy"
                       />
                     </a>
                   )}

@@ -36,9 +36,11 @@ export const HighlightedWorksCard = () => (
           </div>
           <div>
             <img
-              src="/works/og/dice-spec-v2.png"
+              src="/works/og/dice-spec-v2.avif"
               alt="ダイススペック"
               class="rounded"
+              loading="lazy"
+              width={660}
             />
           </div>
         </div>

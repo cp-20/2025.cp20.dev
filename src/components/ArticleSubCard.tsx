@@ -34,6 +34,7 @@ export const ArticleSubCard: Component<Props> = (originalProps) => {
         src={props.article.ogImageUrl}
         alt=""
         class="aspect-[1200/630] sm:h-16 object-cover rounded-r"
+        loading="lazy"
       />
     </a>
   );

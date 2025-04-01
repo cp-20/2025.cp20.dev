@@ -24,10 +24,11 @@ export const WorkCard: Component<Props> = (props) => {
       </div>
       <div class="aspect-[1200/630] bg-white rounded-b">
         <img
-          src={`/works/og/${props.work.id}.png`}
+          src={`/works/og/${props.work.id}.avif`}
           alt=""
           class="aspect-[1200/630] object-cover group-hover:opacity-80 duration-200 rounded-b"
           width={600}
+          loading="lazy"
           style={
             props.transition
               ? { "view-transition-name": `img-${props.work.id}` }

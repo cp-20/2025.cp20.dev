@@ -1,4 +1,4 @@
-import avatarImage from "~/assets/avatar.png";
+import avatarImage from "~/assets/avatar.avif";
 import { useParams } from "@solidjs/router";
 import { For, Show } from "solid-js";
 import { Card, CardLink } from "~/components/Card";
@@ -59,10 +59,11 @@ export default function Work() {
           </div>
           <div class="flex justify-center">
             <img
-              src={`/works/og/${workId()}.png`}
+              src={`/works/og/${workId()}.avif`}
               alt=""
               class="aspect-[1200/630] object-cover max-w-xl rounded w-full"
               style={{ "view-transition-name": `img-${workId()}` }}
+              loading="lazy"
             />
           </div>
           <Card class="md:grid md:grid-cols-2 max-md:flex max-md:flex-col gap-4">
@@ -153,6 +154,7 @@ export default function Work() {
                     alt="cp20"
                     width={32}
                     height={32}
+                    loading="lazy"
                   />
                   <div class="bg-blue/10 px-4 py-2 rounded-lg relative">
                     <div

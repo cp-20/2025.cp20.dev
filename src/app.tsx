@@ -1,6 +1,6 @@
 import "@unocss/reset/tailwind.css";
 import "virtual:uno.css";
-import background from "./assets/background.png";
+import background from "./assets/background.avif";
 
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
