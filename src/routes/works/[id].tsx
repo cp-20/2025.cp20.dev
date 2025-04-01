@@ -194,20 +194,16 @@ export default function Work() {
             </Card>
           </Show>
           <div class="grid grid-cols-2 gap-4">
-            <div>
-              <div class="flex gap-2 items-center text-white font-bold mb-4">
-                <div class="i-mdi-chevron-left size-6" />
-                <span>前の作品</span>
-              </div>
-              <WorkCard work={prevWork()} />
+            <div class="flex gap-2 items-center text-white font-bold mb-4">
+              <div class="i-mdi-chevron-left size-6" />
+              <span>前の作品</span>
             </div>
-            <div>
-              <div class="flex gap-2 items-center text-white font-bold mb-4 justify-end">
-                <span>次の作品</span>
-                <div class="i-mdi-chevron-right size-6" />
-              </div>
-              <WorkCard work={nextWork()} />
+            <div class="flex gap-2 items-center text-white font-bold mb-4 justify-end">
+              <span>次の作品</span>
+              <div class="i-mdi-chevron-right size-6" />
             </div>
+            <WorkCard work={prevWork()} />
+            <WorkCard work={nextWork()} />
           </div>
         </Show>
       </MainLayout>
