@@ -11,6 +11,7 @@ type Props = Omit<
 };
 
 const sizes = [96, 128, 256, 384, 512];
+const quality = 95;
 
 export const ArticleImage: Component<Props> = (props) => {
   const [_, rest] = splitProps(props, ["src", "class"]);
@@ -19,15 +20,11 @@ export const ArticleImage: Component<Props> = (props) => {
     width,
     height,
   }: { width?: number; height?: number }) => {
-    const quality = 95;
-    const fit = "scale-down";
-
     const params = new URLSearchParams();
     params.set("url", props.src);
     if (width) params.set("width", String(width));
     if (height) params.set("height", String(height));
     params.set("quality", String(quality));
-    params.set("fit", fit);
 
     return `/api/images?${params.toString()}`;
   };

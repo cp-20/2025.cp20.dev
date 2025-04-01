@@ -13,14 +13,19 @@ export const GET = async ({ request }: APIEvent) => {
   const height =
     Number.parseInt(url.searchParams.get("height") || "0", 10) || undefined;
   const quality = Number.parseInt(url.searchParams.get("quality") || "75", 10);
-  const fit = url.searchParams.get("fit") || "scale-down";
-
-  const cfOptions = {
-    cf: { image: { width, height, quality, fit, format: "auto" } },
-  };
 
   try {
-    const response = await fetch(imageUrl, cfOptions as RequestInit);
+    const response = await fetch(imageUrl, {
+      cf: {
+        image: {
+          width,
+          height,
+          quality,
+          fit: "scale-down",
+          format: "webp",
+        },
+      },
+    });
 
     if (!response.ok) {
       return new Response(`Failed to fetch image: ${response.statusText}`, {

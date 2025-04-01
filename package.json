@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@cloudflare/workers-types": "^4.20250327.0",
     "@iconify-json/mdi": "^1.2.3",
     "unenv": "^1.10.0",
     "wrangler": "^4.4.1"
