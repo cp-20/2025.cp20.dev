@@ -6,10 +6,10 @@ const animateOnScroll = createIntersectionObserver({ threshold: 0.1 });
 
 export const HighlightedWorksCard = () => (
   <div ref={animateOnScroll}>
-    <Card class="animate-pop-in-up animate-duration-300 child-animate animate-fill-forwards">
+    <Card class="motion-safe:animate-pop-in-up animate-duration-300 child-animate animate-fill-forwards">
       <CardTitle>Highlighted Works</CardTitle>
 
-      <div class="space-y-16 animate-pop-in-up animate-duration-300 animate-delay-500 animate-fill-forwards child-animate">
+      <div class="space-y-16 motion-safe:animate-pop-in-up animate-duration-300 animate-delay-500 animate-fill-forwards child-animate">
         <div class="grid md:grid-cols-2 gap-2 grid-cols-1 bg-blue/5 rounded backdrop-blur-sm p-4">
           <div>
             <h3 class="flex items-center font-bold text-lg mb-2 flex-wrap">
@@ -46,7 +46,7 @@ export const HighlightedWorksCard = () => (
         </div>
       </div>
       <a
-        class="flex justify-center items-center text-sm text-gray-400 hover:text-white transition-colors duration-200 border-dashed border px-4 py-2 border-gray-500 mt-4 rounded hover:bg-white/10 font-medium animate-pop-in-up animate-duration-300 animate-delay-900 invisible animate-fill-forwards"
+        class="flex justify-center items-center text-sm text-gray-400 hover:text-white transition-colors duration-200 border-dashed border px-4 py-2 border-gray-500 mt-4 rounded hover:bg-white/10 font-medium motion-safe:animate-pop-in-up animate-duration-300 animate-delay-900 invisible animate-fill-forwards"
         href="/works"
       >
         <span>他の作品を見る</span>

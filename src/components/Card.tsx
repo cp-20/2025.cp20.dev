@@ -19,7 +19,7 @@ export const CardTitle: Component<ComponentProps<"h2">> = ({
     {...props}
     class={clsx(
       props.class,
-      "text-3xl font-bold mb-8 animate-pop-in-up animate-duration-300 animate-delay-300 animate-fill-forwards child-animate",
+      "text-3xl font-bold mb-8 motion-safe:animate-pop-in-up animate-duration-300 animate-delay-300 animate-fill-forwards child-animate",
     )}
   >
     <div class="border-b border-b-dotted border-b-6 pb-2 w-fit">{children}</div>

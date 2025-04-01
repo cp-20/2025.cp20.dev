@@ -20,7 +20,7 @@ export default function Works() {
             <WorkCard
               work={work}
               transition
-              class="animate-pop-in-up animate-duration-300 invisible animate-fill-forwards"
+              class="motion-safe:animate-pop-in-up animate-duration-300 invisible animate-fill-forwards"
               style={{ "animation-delay": `${index() * 100}ms` }}
             />
           )}

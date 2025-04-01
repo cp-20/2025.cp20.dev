@@ -8,10 +8,10 @@ const animateOnScroll = createIntersectionObserver({ threshold: 0.1 });
 
 export const AboutCard: Component = () => (
   <div ref={animateOnScroll}>
-    <Card class="animate-pop-in-up animate-duration-300 child-animate animate-fill-forwards">
+    <Card class="motion-safe:animate-pop-in-up animate-duration-300 child-animate animate-fill-forwards">
       <CardTitle>About Me</CardTitle>
       <div class="space-y-8">
-        <div class="animate-pop-in-up animate-duration-300 animate-delay-500 animate-fill-forwards child-animate">
+        <div class="motion-safe:animate-pop-in-up animate-duration-300 animate-delay-500 animate-fill-forwards child-animate">
           <h3 class="flex items-center gap-2 font-bold text-lg mb-2">
             <div class="i-mdi-account-group text-teal size-6 shrink-0" />
             <span>所属</span>
@@ -36,7 +36,7 @@ export const AboutCard: Component = () => (
             </li>
           </ul>
         </div>
-        <div class="animate-pop-in-up animate-duration-300 animate-delay-700 animate-fill-forwards child-animate">
+        <div class="motion-safe:animate-pop-in-up animate-duration-300 animate-delay-700 animate-fill-forwards child-animate">
           <h3 class="flex items-center gap-2 font-bold text-lg mb-2">
             <div class="i-mdi-lightbulb-alert text-indigo size-6 shrink-0" />
             <span>興味</span>
@@ -53,7 +53,7 @@ export const AboutCard: Component = () => (
             <p>の両方を含みます</p>
           </div>
         </div>
-        <div class="animate-pop-in-up animate-duration-300 animate-delay-900 animate-fill-forwards child-animate">
+        <div class="motion-safe:animate-pop-in-up animate-duration-300 animate-delay-900 animate-fill-forwards child-animate">
           <h3 class="flex items-center gap-2 font-bold text-lg mb-2">
             <div class="i-mdi-code text-pink size-6 shrink-0" />
             <span>技術スタック</span>
@@ -68,7 +68,7 @@ export const AboutCard: Component = () => (
             </p>
           </div>
         </div>
-        <div class="font-bold text-gray-4 text-sm animate-pop-in-up animate-duration-300 animate-delay-1100 animate-fill-forwards child-animate">
+        <div class="font-bold text-gray-4 text-sm motion-safe:animate-pop-in-up animate-duration-300 animate-delay-1100 animate-fill-forwards child-animate">
           最終更新: 2024/04/01
         </div>
       </div>

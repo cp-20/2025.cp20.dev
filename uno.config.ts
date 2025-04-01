@@ -7,8 +7,7 @@ export default defineConfig({
     [
       /^child-animate$/,
       () => [
-        ".in-view .child-animate:not(.invisible) { animation-play-state: running; }",
-        ".child-animate:not(.in-view) { animation-play-state: paused; visibility: hidden; }",
+        "@media (prefers-reduced-motion: no-preference) {.in-view .child-animate:not(.invisible) {animation-play-state: running;}.child-animate:not(.in-view) {animation-play-state:paused;visibility:hidden;}}",
       ],
     ],
     [

@@ -48,7 +48,7 @@ export default function Articles() {
                 <For each={articles}>
                   {(article, index) => (
                     <a
-                      class="bg-white/10 rounded text-white backdrop-blur-sm flex hover:bg-white/20 transition-colors duration-200 flex max-sm:flex-col animate-pop-in-right animate-duration-300 animate-fill-forwards invisible"
+                      class="bg-white/10 rounded text-white backdrop-blur-sm flex hover:bg-white/20 transition-colors duration-200 flex max-sm:flex-col motion-safe:animate-pop-in-right animate-duration-300 animate-fill-forwards invisible"
                       href={article.url}
                       style={{
                         "animation-delay": `${
