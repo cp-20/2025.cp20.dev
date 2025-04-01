@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "cp20.dev",
+  "short_name": "cp20.dev",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#1d1d21",
+  "description": "世の中にはね、無駄なことなんかひとつだってないのよ、きっと"
+}
