@@ -1,5 +1,6 @@
 import { Title } from "@solidjs/meta";
 import { AboutCard } from "~/components/models/home/AboutCard";
+import { FeaturedSeriesCard } from "~/components/models/home/FeaturedSeriesCard";
 import { HighlightedWorksCard } from "~/components/models/home/HighlightedWorksCard";
 import { ProfileCard } from "~/components/models/home/ProfileCard";
 import { RecentArticlesCard } from "~/components/models/home/RecentArticlesCard";
@@ -13,6 +14,7 @@ export default function Home() {
       <AboutCard />
       <HighlightedWorksCard />
       <RecentArticlesCard />
+      <FeaturedSeriesCard />
     </MainLayout>
   );
 }

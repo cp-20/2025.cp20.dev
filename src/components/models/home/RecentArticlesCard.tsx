@@ -4,7 +4,6 @@ import { Card, CardTitle } from "~/components/Card";
 import { useArticles } from "~/features/articles/useArticles";
 import { createIntersectionObserver } from "~/utils/useIntersectionObserver";
 
-// Create a directive for intersection observer
 const animateOnScroll = createIntersectionObserver({ threshold: 0.1 });
 
 export const RecentArticlesCard: Component = () => {
