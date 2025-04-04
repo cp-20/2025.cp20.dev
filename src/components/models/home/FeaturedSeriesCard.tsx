@@ -13,8 +13,12 @@ export const FeaturedSeriesCard: Component = () => {
 
         <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
           <For each={featuredSeries}>
-            {(series) => (
-              <a class="relative group" href={series.link}>
+            {(series, index) => (
+              <a
+                class="relative group animate-fill-forwards motion-safe:animate-pop-in-up animate-duration-300 child-animate"
+                href={series.link}
+                style={{ "animation-delay": `${index() * 100 + 500}ms` }}
+              >
                 <div class="px-4 py-2 absolute h-16 flex flex-col justify-end bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent rounded group-hover:h-32 group-hover:pb-4 transition-all duration-200">
                   <div class="font-medium">{series.title}</div>
                   <div class="text-xs">{series.author}</div>
