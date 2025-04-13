@@ -1,7 +1,5 @@
 import crypto from "node:crypto";
 
-const encoder = new TextEncoder();
-
 const encodeBase64 = (buf: ArrayBufferLike): string => {
   let binary = "";
   const bytes = new Uint8Array(buf);
@@ -14,11 +12,13 @@ const encodeBase64 = (buf: ArrayBufferLike): string => {
 const encodeBase64Url = (buf: ArrayBufferLike): string =>
   encodeBase64(buf).replace(/\/|\+/g, (m) => ({ "/": "_", "+": "-" })[m] ?? m);
 
-const encodeJwtPart = (part: unknown): string =>
-  encodeBase64Url(encoder.encode(JSON.stringify(part)).buffer).replace(
+const encodeJwtPart = (part: unknown): string => {
+  const encoder = new TextEncoder();
+  return encodeBase64Url(encoder.encode(JSON.stringify(part)).buffer).replace(
     /=/g,
     "",
   );
+};
 const encodeSignaturePart = (buf: ArrayBufferLike): string =>
   encodeBase64Url(buf).replace(/=/g, "");
 
@@ -30,6 +30,8 @@ const algorithm = {
 };
 
 export const sign = async (key: string): Promise<string> => {
+  const encoder = new TextEncoder();
+
   const [id, secret] = key.split(":");
 
   const now = Math.floor(Date.now() / 1000);

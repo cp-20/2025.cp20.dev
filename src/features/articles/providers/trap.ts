@@ -13,17 +13,17 @@ const getPostsResponseSchema = v.object({
   ),
 });
 
-const searchParams = new URLSearchParams({
-  includes: "authors",
-  fields: "title,url,feature_image,published_at",
-  filter: "authors.name:cp20+status:published+visibility:public",
-  limit: "all",
-  order: "published_at desc",
-});
-const apiUrl = new URL("https://blog-admin.trap.jp/ghost/api/admin/posts");
-apiUrl.search = searchParams.toString();
-
 const getPosts = async (apiKey: string) => {
+  const searchParams = new URLSearchParams({
+    includes: "authors",
+    fields: "title,url,feature_image,published_at",
+    filter: "authors.name:cp20+status:published+visibility:public",
+    limit: "all",
+    order: "published_at desc",
+  });
+  const apiUrl = new URL("https://blog-admin.trap.jp/ghost/api/admin/posts");
+  apiUrl.search = searchParams.toString();
+
   const token = await sign(apiKey);
 
   const headers = { Authorization: `Ghost ${token}` };
