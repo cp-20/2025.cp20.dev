@@ -1,5 +1,5 @@
 import type { Component } from "solid-js";
-import avatar from "~/assets/avatar.png";
+import avatar from "~/assets/avatar.avif";
 import { Card } from "~/components/Card";
 import { DiscordIcon } from "~/components/icons/discord";
 import { Mixi2Icon } from "~/components/icons/mixi2";
