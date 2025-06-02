@@ -69,7 +69,7 @@ export const AboutCard: Component = () => (
           </div>
         </div>
         <div class="font-bold text-gray-4 text-sm motion-safe:animate-pop-in-up animate-duration-300 animate-delay-1100 animate-fill-forwards child-animate">
-          最終更新: 2024/04/01
+          最終更新: 2025/04/01
         </div>
       </div>
     </Card>
