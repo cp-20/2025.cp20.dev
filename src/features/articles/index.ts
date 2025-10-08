@@ -4,9 +4,16 @@ import { fetchQiitaArticles } from "./providers/qiita";
 import { fetchSizumeArticles } from "./providers/sizume";
 import { fetchTrapArticles } from "./providers/trap";
 import { fetchZennArticles } from "./providers/zenn";
+import { otherArticles } from "~/features/articles/providers/others";
 
 export type Article = {
-  source: "qiita.com" | "zenn.dev" | "trap.jp" | "note.com" | "sizu.me";
+  source:
+    | "qiita.com"
+    | "zenn.dev"
+    | "trap.jp"
+    | "note.com"
+    | "sizu.me"
+    | "other";
   url: string;
   title: string;
   postedAt: Date;
@@ -49,6 +56,7 @@ const getArticles = async ({ qiitaAccessToken, ghostApiKey }: Params) => {
     fetchNoteArticles(),
     fetchSizumeArticles(),
     fetchTrapArticles(ghostApiKey),
+    otherArticles,
   ]).then((articles) => articles.flat());
 
   articles.sort((a, b) => b.postedAt.getTime() - a.postedAt.getTime());
